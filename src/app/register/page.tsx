@@ -38,7 +38,7 @@ export default function Register() {
   return (
     <>
     <div className="h-lvh flex justify-center items-center">
-        <div className="w-1/2 mx-auto bg-gray-200 my-5 border rounded-2xl px-2">
+        <div className="md:w-1/2 mx-auto bg-gray-200 my-5 border rounded-2xl px-2">
         <Toaster />
         <h2 className="font-bold text-center py-2 text-green-700 text-xl">
           Register Now

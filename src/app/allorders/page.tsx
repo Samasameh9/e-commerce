@@ -15,10 +15,7 @@ export default function Allorders() {
   });
   console.log(data);
 
-  if (status === "loading") return <div className="flex justify-center items-center h-lvh"><p className="text-2xl text-green-700 border-2 p-2 rounded-2xl">loading....</p></div>;
-
-
-
+if(isLoading) return <div className="flex items-center justify-center  h-lvh"> <h2 className="text-2xl font-bold text-green-600 border-3 rounded-2xl border-green-600 p-3">Loading orders</h2></div>
   if (error) return <p>Error loading orders</p>;
 
   return (
