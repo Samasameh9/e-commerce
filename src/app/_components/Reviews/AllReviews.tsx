@@ -71,7 +71,7 @@ export default function AllReviews({ productId }: { productId: string }) {
       <div>
         {" "}
         <span className="font-bold text-2xl text-green-700 "> reviews:</span>
-        <div className="my-5 bg-white  dark:bg-gray-800   w-screen  p-4  rounded-2xl ">
+        <div className="my-5 bg-white  dark:bg-gray-800     p-4  rounded-2xl ">
           <Toaster />
           <h2 className="font-bold text-center py-2 mb-2 text-green-700 text-xl border-2 border-green-700 inline-block rounded-2xl p-2">
             create review
