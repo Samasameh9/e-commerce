@@ -14,10 +14,10 @@ type myProps = {
   };
 };
 export default async function BrandDetails(props: myProps) {
- let {brand_id}= await props.params;
+ let {brand_id}=  props.params;
   console.log(brand_id );
   let response = await fetch(
-    `https://ecommerce.routemisr.com/api/v1/brands/${brand_id}`,
+    `${process.env.API}/brands/${brand_id}`,
   );
   let { data }: { data: BrandDetailsInterface } = await response.json();
   console.log(data);
