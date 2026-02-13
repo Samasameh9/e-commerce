@@ -1,17 +1,21 @@
 "use client";
 import { Button } from "@/components/ui/button";
+ import * as zod from "zod"
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import ForgotPass from "../services/ForgotPass";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ForgotEmail } from "../schema/ForgotPass/ForgotEmail";
 export default function ForgotPassword() {
   const [isLoading, setisLoading] = useState(false);
   const form = useForm({
     defaultValues: {
       email: "",
     },
+      resolver: zodResolver(ForgotEmail),
   });
 
   async function submitForm(values: { email: string }) {
@@ -20,13 +24,13 @@ export default function ForgotPassword() {
     const response = await ForgotPass(values);
 
     console.log(response);
-    if (response?.statusMsg == "success") {
-      toast.success(response.message);
-      window.location.href = "/ResetCode";
-    } else {
-      toast.error("Error try again");
-    }
-    setisLoading(false);
+  if (response?.statusMsg == "success") {
+    toast.success(response.message);
+    window.location.href = "/ResetCode";
+  } else {
+    toast.error("Error try again");
+  }
+  setisLoading(false);
   }
 
   return (

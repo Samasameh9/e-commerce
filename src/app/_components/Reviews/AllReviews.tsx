@@ -56,11 +56,11 @@ export default function AllReviews({ productId }: { productId: string }) {
        if (data?.message === "success") {
     toast.success("Review removed");
     queryclient.invalidateQueries({ queryKey: ["reviews", productId] });
-    console.log('delete');
+
     
   } else {
     toast.error("Delete failed");
-     console.log('no');
+    
   }
 },
   });
@@ -73,7 +73,7 @@ export default function AllReviews({ productId }: { productId: string }) {
         <span className="font-bold text-2xl text-green-700 "> reviews:</span>
         <div className="my-5 bg-white  dark:bg-gray-800     p-4  rounded-2xl ">
           <Toaster />
-          <h2 className="font-bold text-center py-2 mb-2 text-green-700 text-xl border-2 border-green-700 inline-block rounded-2xl p-2">
+          {session?._id? <> <h2 className="font-bold text-center py-2 mb-2 text-green-700 text-xl border-2 border-green-700 inline-block rounded-2xl p-2">
             create review
           </h2>
           <form onSubmit={form.handleSubmit(sumbitform)}>
@@ -84,7 +84,7 @@ export default function AllReviews({ productId }: { productId: string }) {
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor={field.name}>review:</FieldLabel>
                   <Input
-                    className="bg-white mb-2 w-1/2"
+                    className="bg-white mb-2 "
                     {...field}
                     id={field.name}
                     aria-invalid={fieldState.invalid}
@@ -124,7 +124,8 @@ export default function AllReviews({ productId }: { productId: string }) {
                 "submit"
               )}
             </Button>
-          </form>
+          </form></>:null}
+         
         </div>
         {data?.data ? (
           data.data.map((review: AllReviewsTypes) => {
@@ -198,8 +199,10 @@ export default function AllReviews({ productId }: { productId: string }) {
             );
           })
         ) : (
+         
           <div>loading Reviews...</div>
         )}
+      
       </div>
     </>
   );

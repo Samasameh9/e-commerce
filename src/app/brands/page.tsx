@@ -4,7 +4,7 @@ import { BrandInterface } from "@/types/brandInterface";
 
 export default async function Brands() {
   let response = await fetch(
-    "https://ecommerce.routemisr.com/api/v1/brands?limit=10",
+    `${process.env.API}/brands?limit=10`,
   );
 
 let  {data}:{data: BrandInterface[]}= await response.json()
