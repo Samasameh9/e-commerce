@@ -84,7 +84,7 @@ export default function AllReviews({ productId }: { productId: string }) {
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor={field.name}>review:</FieldLabel>
                   <Input
-                    className="bg-white mb-2"
+                    className="bg-white mb-2 w-1/2"
                     {...field}
                     id={field.name}
                     aria-invalid={fieldState.invalid}
