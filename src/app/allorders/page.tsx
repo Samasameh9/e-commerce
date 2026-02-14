@@ -20,7 +20,7 @@ if(isLoading) return <div className="flex items-center justify-center  h-lvh"> <
 
   return (
     <div>
-      <div className="flex justify-center items-center my-5">
+      <div className="flex justify-center items-center my-5 ">
         {" "}
         <h2 className="text-green-700 text-2xl border-2 p-2 rounded-2xl">
           My Orders
