@@ -23,27 +23,29 @@ export default function AddBtn({ productId }: { productId: string }) {
       queryclient.invalidateQueries({ queryKey: ["get-cart"] });
     },
     onError: () => {
-      toast.error("login first");
+      toast.error(data?.message || 'login first');
     },
   });
   console.log(data);
   //wishlist
      let {
-    data:wishlistData,
+    data:wishlistUserData,
     mutate: AddWishlist,
   } = useMutation({
     mutationFn: addWishList,
-    onSuccess: (data) => {
+    onSuccess: (wishlistUserData) => {
       toast.success('product add to wishlist');
-    queryclient.invalidateQueries({ queryKey: ["get-wislist"] });
+    queryclient.invalidateQueries({ queryKey: ["get-wishlist"] });
    
     },
     onError: () => {
       toast.error("login first");
     },
   });
+  
+  
 
-console.log(wishlistData?.data);
+console.log(wishlistUserData);
 
   return (
     <>

@@ -1,7 +1,5 @@
 import {  wishlistprod } from "@/types/cartInterface";
 
-
-
 export default function WishListCard({productLike,DeleteProdWishlist}:{productLike:wishlistprod,DeleteProdWishlist:Function}) {
     
     

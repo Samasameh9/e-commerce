@@ -1,3 +1,4 @@
+'use server'
 import { getToken } from "next-auth/jwt";
 import { cookies } from "next/headers";
 import { NextRequest } from "next/server";

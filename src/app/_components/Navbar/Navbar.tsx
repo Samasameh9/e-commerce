@@ -11,11 +11,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CartResponse, wishlistInterface } from "@/types/cartInterface";
 
 export default function Navbar() {
-  let {
-    data: cartData,
-    isError,
-    isLoading,
-  } = useQuery<CartResponse>({
+  let { data: cartData} = useQuery<CartResponse>({
     queryKey: ["get-cart"],
     queryFn: async () => {
       const res = await fetch("/api/cart");
@@ -25,9 +21,7 @@ export default function Navbar() {
   });
   //wishlist
    let {
-    data: wishlistData,
-   
-  } = useQuery<wishlistInterface>({
+    data: wishlistData} = useQuery<wishlistInterface>({
     queryKey: ["get-wishlist"],
     queryFn: async () => {
       const res = await fetch("/api/wishlist");
