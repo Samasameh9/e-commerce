@@ -25,7 +25,7 @@ export default async function BrandDetails(props: myProps) {
     <>
        <div className="grid md:grid-cols-3 gap-5 items-center mt-5 h-lvh ">
         <div className="md:col-span-1 border-2 rounded-2xl">
-         <Image src={data.image} alt={data.name} width={300} height={400} />
+         <Image src={data?.image} alt='image' width={300} height={400} />
         </div>
         <div className="md:col-span-2 ">
           <Card className="relative w-full ">
@@ -33,17 +33,17 @@ export default async function BrandDetails(props: myProps) {
            
             <CardHeader>
               <CardAction>
-                <Badge >{data.slug}</Badge>
+                <Badge >{data?.slug}</Badge>
               </CardAction>
               <CardTitle className="text-2xl font-bold">
-                {data.name}
+                {data?.name}
               </CardTitle>
                <CardDescription className=" my-3 ">
-              <h2 className="font-bold text-green-700">Created at:</h2> {data.createdAt.split(".").slice(0, 1).join(" ").replace("T", " ")}
+              <h2 className="font-bold text-green-700">Created at:</h2> {data?.createdAt.split(".").slice(0, 1).join(" ").replace("T", " ")}
               </CardDescription>
               <CardDescription >
                  <h2 className="font-bold text-green-700">Updated at:</h2>
-               {data.updatedAt.split(".").slice(0, 1).join(" ").replace("T", " ")}
+               {data?.updatedAt.split(".").slice(0, 1).join(" ").replace("T", " ")}
               </CardDescription>
             </CardHeader>
         
