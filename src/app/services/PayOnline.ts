@@ -8,7 +8,9 @@ export async function PayOnlineOrders(CartId:string,shippingAddress:shipping){
     if(!token){
         throw new Error('unauthorized')
     }
-    let response= await fetch(`${process.env.API}/orders/checkout-session/${CartId}?url=http://localhost:3000`,{
+     const baseUrl =
+    process.env.NEXTAUTH_URL || "http://localhost:3000"
+    let response= await fetch(`${process.env.API}/orders/checkout-session/${CartId}?url=${baseUrl}`,{
         method:'POST',
         headers:{
             token:token,
