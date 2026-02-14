@@ -9,7 +9,7 @@ export async function PayOnlineOrders(CartId:string,shippingAddress:shipping){
         throw new Error('unauthorized')
     }
     const baseUrl =
-  process.env.NEXTAUTH_URL || "http://localhost:3000"
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
     let response= await fetch(`${process.env.API}/orders/checkout-session/${CartId}?url=${baseUrl}`,{
         method:'POST',
