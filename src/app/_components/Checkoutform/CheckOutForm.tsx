@@ -37,7 +37,7 @@ export default function CheckOutForm({cartId}:{cartId:string}) {
   let response= await PayOnlineOrders(cartId ,shippingAddress )
   console.log(response);
 if(response.status=='success'){
-  window.location.href='/Allorders'
+  window.location.href=response.session.url
 }else{
    toast.error("Error")
 }
