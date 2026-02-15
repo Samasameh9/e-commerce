@@ -14,7 +14,7 @@ export default function MainSlider() {
   
   
   <div className="flex">
-    <div className="w-3/4 h-[200px]  md:h-[370px]  overflow-hidden">
+    <div className="w-3/4 h-[180px]  md:h-[370px]  overflow-hidden">
      <Swiper
      modules={[Autoplay]}
      autoplay={{
@@ -31,7 +31,7 @@ export default function MainSlider() {
       <SwiperSlide><Image className='w-full object-fill   object-center'  src={img5} alt="img5"/></SwiperSlide>
     </Swiper>
     </div>
-    <div className="w-1/4 h-[200px] md:h-[370px] overflow-hidden">
+    <div className="w-1/4  h-[180px] md:h-[370px] overflow-hidden">
 <div ><Image className='w-full object-fill  object-center h-[117px] sm:h-[110px] md:h-[200px] ' src={img1} alt="img1" /></div>
    <div ><Image className='w-full object-fill  object-center h-[117px] sm:h-[110px] md:h-[200px] '  src={img2} alt="img2"  /></div> 
     </div>

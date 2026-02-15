@@ -61,7 +61,7 @@ PayOnline(cartId ,shippingAddress)
 
   return (
     <>
-      <div className="w-1/2 mt-10 rounded-2xl bg-gray-200 mx-auto p-10 ">
+      <div className="md:w-1/2 mt-10 rounded-2xl bg-gray-200 mx-auto p-10 ">
         <Toaster />
         <h2 className="text-2xl font-bold text-green-600">Checkout Now</h2>
         <form onSubmit={form.handleSubmit(submitForm)}>
