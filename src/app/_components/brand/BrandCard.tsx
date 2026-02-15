@@ -2,7 +2,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardAction, CardHeader, CardTitle } from "@/components/ui/card";
 import { BrandInterface } from "@/types/brandInterface";
 import Image from "next/image";
-
 import Link from "next/link";
 import React from "react";
 
